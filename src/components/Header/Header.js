@@ -4,12 +4,12 @@ import MovieForm from "../MovieForm/MovieForm";
 import Stars from "../Stars/Stars";
 import "./header.css";
 
-const Header = ({ setSearchTxt, setSearchRate, searchRate }) => {
+const Header = ({ setSearchTxt, setSearchRate, searchRate, addMovie }) => {
   return (
     <div className="header">
       <h1>Go My Movie</h1>
 
-      <MovieForm isEdit={false} />
+      <MovieForm isEdit={false} addMovie={addMovie} />
 
       <div className="filter">
         <Stars

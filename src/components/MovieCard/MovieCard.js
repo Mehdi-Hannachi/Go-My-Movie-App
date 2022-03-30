@@ -2,7 +2,11 @@ import MovieForm from "../MovieForm/MovieForm";
 import Stars from "../Stars/Stars";
 import "./moviecard.css";
 
-const MovieCard = ({ movie: { title, desc, year, image, rate } }) => {
+const MovieCard = ({
+  movie: { title, desc, year, image, rate, id },
+  movies,
+  setMovies,
+}) => {
   return (
     <div id="container">
       <div className="product-details">
@@ -12,7 +16,12 @@ const MovieCard = ({ movie: { title, desc, year, image, rate } }) => {
 
         <Stars rate={rate} isEdit={false} />
 
-        <MovieForm isEdit={true} />
+        <MovieForm
+          isEdit={true}
+          id={id}
+          movies={movies}
+          setMovies={setMovies}
+        />
 
         {/* <div className="control">
           <button className="btn">

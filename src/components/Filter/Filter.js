@@ -3,7 +3,7 @@ import { Form, Button, FormControl } from "react-bootstrap";
 
 const Filter = ({ setSearchTxt }) => {
   return (
-    <div>
+    <div className="myfilter">
       <Form className="d-flex">
         <FormControl
           type="search"
@@ -12,7 +12,9 @@ const Filter = ({ setSearchTxt }) => {
           aria-label="Search"
           onChange={(e) => setSearchTxt(e.target.value)}
         />
-        <Button variant="outline-success">Search</Button>
+        <Button variant="outline-success" style={{ padding: "0 20px" }}>
+          Search
+        </Button>
       </Form>
     </div>
   );
