@@ -2,7 +2,11 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import MoviesList from "./components/MoviesList/MoviesList";
+
+import { Routes, Route } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import Home from "./components/Home/Home";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 
 const App = () => {
   const data = [
@@ -58,12 +62,27 @@ const App = () => {
         searchRate={searchRate}
         addMovie={addMovie}
       />
-      <MoviesList
-        movies={movies}
-        searchTxt={searchTxt}
-        searchRate={searchRate}
-        setMovies={setMovies}
-      />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/movieslist"
+          element={
+            <MoviesList
+              movies={movies}
+              searchTxt={searchTxt}
+              searchRate={searchRate}
+              setMovies={setMovies}
+            />
+          }
+        />
+
+        <Route
+          path="/moviedetails/:idmovie"
+          element={<MovieDetails movies={movies} />}
+        />
+      </Routes>
     </div>
   );
 };

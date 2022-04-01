@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MovieForm from "../MovieForm/MovieForm";
 import Stars from "../Stars/Stars";
 import "./moviecard.css";
@@ -23,11 +24,13 @@ const MovieCard = ({
           setMovies={setMovies}
         />
 
-        {/* <div className="control">
-          <button className="btn">
-            <span className="buy">show More details</span>
+        <div className="control">
+          <button>
+            <Link to={`/moviedetails/${id}`}>
+              <span className="details">show More details</span>
+            </Link>
           </button>
-        </div> */}
+        </div>
       </div>
 
       <div className="product-image">
